@@ -1,0 +1,13 @@
+{
+  "name": "compare_htr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "pedr <pedrlz.frn@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "htr-cli": "dist/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
