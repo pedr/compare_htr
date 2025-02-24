@@ -22,8 +22,12 @@ export default class StoreResult {
         }
 
         const line = '"' + escapeStrings(image) + '","' + escapeStrings(transcription) + '","' + wer + '"\n';
-        console.log({ storage})
         await fs.appendFile(storage, line, 'utf-8');
+    }
+
+    public async init() {
+        const storageFile = await this.storage();
+        console.log('Outputing result to file ' + storageFile)
     }
 
     private async storage() {

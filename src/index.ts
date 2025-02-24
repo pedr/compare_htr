@@ -10,7 +10,7 @@ program
   .description('Run the HTR test for the specified model')
   .action(async (modelName, options) => {
     console.log(`Running test for model: ${modelName}`);
-    console.log(`Append results: ${options.appendResults}`);
+    console.log(`Append results: ${!!options.appendResults}`);
     
     try {
       const result = await testCommand(modelName, !!options.appendResults);

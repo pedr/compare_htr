@@ -18,6 +18,7 @@ export default async (modelName: string, isAppendResults: boolean) => {
     
     const model = await getModel(modelName); 
     const storeResult = new StoreResult(modelName, isAppendResults);
+    await storeResult.init();
 
     const content = await fs.readdir(process.cwd() + '/images/');
     const images = content.filter(file => !file.endsWith('.json'));
@@ -25,10 +26,11 @@ export default async (modelName: string, isAppendResults: boolean) => {
     const groundTruth = await import(process.cwd() + '/images/_ground-truth.json');
 
     for (const image of images) {
-        const transcription = await model.run(image);
+        console.log('Processing: ' + image)
+        const fullPath = process.cwd() + '/images/' + image;
+        const transcription = await model.run(fullPath);
         const gt = groundTruth.default[image];
         const wer = wordErrorRate(gt, transcription);
-        console.log({wer})
         storeResult.append(image, transcription, wer);
     }
 
