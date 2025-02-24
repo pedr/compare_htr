@@ -27,6 +27,10 @@ export default async (modelName: string, isAppendResults: boolean) => {
 
     for (const image of images) {
         console.log('Processing: ' + image)
+        const imageAlreadyProcessed = await storeResult.has(image);
+        if (imageAlreadyProcessed) {
+            continue;
+        }
         const fullPath = process.cwd() + '/images/' + image;
         const transcription = await model.run(fullPath);
         const gt = groundTruth.default[image];

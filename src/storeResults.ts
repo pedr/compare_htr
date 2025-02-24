@@ -48,4 +48,11 @@ export default class StoreResult {
         this.storageFile = process.cwd() + '/results/' + orderByDate[orderByDate.length - 1];
         return this.storageFile;
     }
+
+    public async has(image: string) {
+        const storage = await this.storage();
+        const content = await fs.readFile(storage, 'utf-8');
+        const lines = content.split('\n');
+        return lines.some(line => line.includes(image));
+    }
 }
