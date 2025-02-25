@@ -53,5 +53,6 @@ const normalizeBeforeWER = (text) => {
         .replaceAll('”', '"')
         // multiple spaces with single one
         .replaceAll(/\s\s+/g, ' ')
+        .replaceAll('’', "'")
         .toLowerCase();
 }
