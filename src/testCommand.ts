@@ -27,6 +27,7 @@ export default async (modelName: string, isAppendResults: boolean) => {
 
     for (const image of images) {
         console.log('Processing: ' + image)
+        const started = new Date().getTime();
         const imageAlreadyProcessed = await storeResult.has(image);
         if (imageAlreadyProcessed) {
             continue;
@@ -34,10 +35,23 @@ export default async (modelName: string, isAppendResults: boolean) => {
         const fullPath = process.cwd() + '/images/' + image;
         const transcription = await model.run(fullPath);
         const gt = groundTruth.default[image];
-        const wer = wordErrorRate(gt, transcription);
-        storeResult.append(image, transcription, wer);
+        const wer = wordErrorRate(normalizeBeforeWER(gt), normalizeBeforeWER(transcription));
+        const durationInSeconds = Math.floor((new Date().getTime() - started) / 1000);
+        console.log(`Duration: ${durationInSeconds} seconds`)
+        storeResult.append(image, transcription, wer, durationInSeconds);
     }
 
     storeResult.resume()
 
+}
+
+const normalizeBeforeWER = (text) => {
+    return text
+        .replaceAll('\n', ' ')
+        .replaceAll('\t', ' ')
+        .replaceAll('“', '"')
+        .replaceAll('”', '"')
+        // multiple spaces with single one
+        .replaceAll(/\s\s+/g, ' ')
+        .toLowerCase();
 }

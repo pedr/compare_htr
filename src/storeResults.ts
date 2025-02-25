@@ -14,14 +14,14 @@ export default class StoreResult {
         // get all metrics and make and gave a unique WER value
     }
 
-    public async append(image: string, transcription: string, wer: number) {
+    public async append(image: string, transcription: string, wer: number, durationInSeconds: number) {
         const storage = await this.storage()
 
         const escapeStrings = (str: string) => {
             return str.replace(/"/g, '""');
         }
 
-        const line = '"' + escapeStrings(image) + '","' + escapeStrings(transcription) + '","' + wer + '"\n';
+        const line = '"' + escapeStrings(image) + '","' + escapeStrings(transcription) + '","' + wer + '",' + durationInSeconds + '\n';
         await fs.appendFile(storage, line, 'utf-8');
     }
 
@@ -38,7 +38,7 @@ export default class StoreResult {
         if (!this.isAppendResults) {
             const date = (new Date()).getTime();
             const fileName = process.cwd() + '/results/' + this.modelName + '_' +  date + '.csv';
-            await fs.writeFile(fileName, 'image,transcription,wer\n');
+            await fs.writeFile(fileName, 'image,transcription,wer,duration_in_seconds\n');
             this.storageFile = fileName;
             return this.storageFile;
         }
