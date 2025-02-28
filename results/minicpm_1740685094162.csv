@@ -1,0 +1,37 @@
+image,transcription,wer,duration_in_seconds
+"french-1.jpeg","Les anciens manuscrits régorgent de mystères et d'histoires oubliées. Chaque page jaune par le temps témoigne d'une époque révolue où l'écriture était un art minotrex. Les calligraphes de jades lacraient de leur époque. Aujourd'hui, grâce aux avancées technologiques, ces œuvres peuvent être mémo riées et analysées par des systèmes de reconnaissance optique de caractères.","0.31343283582089554",367
+"fullpage-french-1.png","Scott Joplin, né le 24 novembre 1868 au Texas, est un pianiste et compositeur afro-américain - Bien qu'ayant écrit des œuvres dans plusieurs styles, y compris le classique et l'opéra, Sa notoriété tient principalement à ses compositions de musique ragtime - Sa musicalité, son talent et son importance dans l'histoire du ragtime et de la musique américaine sont exceptionnels.","0.06779661016949153",336
+"fullpage-french-2.png","Le 'Maple Leaf Rag', en la bémol majeur, est un des ragtimes de Scott Joplin les plus connus avec le célèbre 'The Entertainer'. Le 'Maple Leaf Rag' a été composé en 1899, peu après son 'Original Rag' qui, lui, a été un échec. Il est possible que ce ragtime ait été nommé d'après le 'Maple Leaf Club', un club où Scott Joplin venait régulièrement jouer.","0.15384615384615385",338
+"markdown-1.jpeg","# Main title
+Some text here. This should take more than one line.
+## Sub title
+- One kind
+- of list
+- sub-item
+## Conclusion
+Let's finish here.","0.10344827586206896",308
+"markdown-2.jpeg","# Groceries list
+- [ ] Milk
+- [X] Bread
+- [ ] Eggs
+- [ ] Flour
+- [ ] Blackberries","0.45454545454545453",307
+"sample_1.png","j'étudie français.","0",302
+"text-lines-1.jpeg","Krahen HTR Tasks: - Compare French HTR accuracy with Finetuned TROCR. - Set up comparison logic:  - Krahen  - TROCR Evaluate page segmentation performance. Can there models run on end-user computers?  - Krahen?  - TROCR?","0.34285714285714286",334
+"text-lines-3.jpeg","C'est un exemple d'un texte en français. Une deuxième ligne de texte. Une troisième ligne de texte.","0.16666666666666666",191
+"text-lines-4.jpeg","This is printed, multi-line text written on unlined paper. This text is written in English and should be divided into 3 or 4 lines.","0",190
+"text-lines-5.jpeg","This is cursive text written in English on unlined paper. It should be divided into 3 lines by the separator.","0.05",219
+"text-lines-6.jpeg","This is another mix of drawings and diagrams: The above drawing is not text and should not be recognised as such. This diagram has some text: A B U This is more text. This is even more.","0.10810810810810811",226
+"text-lines-8.jpeg","This is another test of cursive multi-line handwriting, in a portrait orientation. This page should contain several lines of text.
+
+This is a second paragraph, still in cursive. This paragraph should contain five total lines of text. This sentence should form the fifth line.
+
+This paragraph contains printed text. Will printed text be better recognized than cursive?
+
+This is more text to fill the page: 'Troer (at the time of this writing) seems likely to require more work than Kriken to create an end-to-end HTR pipeline.'","0.09302325581395349",329
+"text-lines-9.jpeg","TROCR vs Kraken After fine-tuning, TROCR seems to have much better single-line accuracy than Kraken. However, Kraken has image segmentation recognizing lines of text in an image built-in. At present, this difference in accuracy may just be because Kraken had not been fine-tuned on many types of handwriting. If Kraken still has poor performance post fine-tuning then one option could be to use Kraken for segmentation and TROCR for text recognition. Also – is Kraken's image segmentation good enough?","0.06329113924050633",318
+"text-lines-9_20.jpeg","Trocr vs Kden
+After fine-tuning, Trocr seems to have much better single-line accuracy than Kden. However; Kden has image segmentation - recognizing lines of text in an image within. At present, this difference in accuracy may just be because Kden had not been fine-tuned on many types of handwriting.
+
+If Kden still has poor performance post-fine-tuning then one option could be to use Kden for sequential and Trocr for text recognition.
+Also - Is Kden's image segmentation good enough?","0.189873417721519",210

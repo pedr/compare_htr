@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "commander": "^13.1.0",
+    "csv": "^6.3.11",
+    "dotenv": "^16.4.7",
     "word-error-rate": "^0.0.7"
   }
 }
