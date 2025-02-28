@@ -22,7 +22,7 @@ export default async (reportFilePath: string) => {
     const humanReadable = (val: number) => (val * 100).toFixed(2) + '%'
 
     let l = '';
-    l += '\n' + "Metric is based on WER (Word error rate), lower is better, 0% means that is identical.";
+    l += '\n' + "Metric is based on WER (Word error rate), lower is better, 0% means that it is identical.";
     l += '\n' + '| Result | Average | Median | Worst Transcription | Worst WER | Average duration (seconds) |';
     l += '\n' + '| --- | --- | --- | --- | --- | --- |';
     l += '\n' + `|${reportFilePath.split('/')[reportFilePath.split('/').length - 1]}|${humanReadable(averageWER)}|${humanReadable(medianWER)}|${worstTranscription[0]}|${humanReadable(parseFloat(worstTranscription[2]))}| ${averageSeconds.toFixed(0)} |`;
