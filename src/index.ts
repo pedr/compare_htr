@@ -1,6 +1,8 @@
+require('dotenv').config();
 import { Command } from 'commander';
 import { exec } from 'child_process';
 import testCommand from './testCommand';
+import compareCommand from './compareCommand';
 
 const program = new Command();
 
@@ -22,21 +24,17 @@ program
   });
 
 program
-  .command('compare')
+  .command('compare <result_path>')
   .description('Compare the performance of different HTR models')
-  .action(() => {
+  .action(async (resultPath: string) => {
     
-    exec('echo "Generating comparison report..."', (error, stdout, stderr) => {
-      if (error) {
-        console.error(`Error: ${error.message}`);
-        return;
-      }
-      if (stderr) {
-        console.error(`Stderr: ${stderr}`);
-        return;
-      }
-      console.log(`Output: ${stdout}`);
-    });
+    try {
+      const result = await compareCommand(resultPath);
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
   });
 
 program.parse(process.argv);

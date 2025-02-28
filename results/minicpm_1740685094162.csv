@@ -10,12 +10,6 @@ Some text here. This should take more than one line.
 - sub-item
 ## Conclusion
 Let's finish here.","0.10344827586206896",308
-"markdown-2.jpeg","# Groceries list
-- [ ] Milk
-- [X] Bread
-- [ ] Eggs
-- [ ] Flour
-- [ ] Blackberries","0.45454545454545453",307
 "sample_1.png","j'étudie français.","0",302
 "text-lines-1.jpeg","Krahen HTR Tasks: - Compare French HTR accuracy with Finetuned TROCR. - Set up comparison logic:  - Krahen  - TROCR Evaluate page segmentation performance. Can there models run on end-user computers?  - Krahen?  - TROCR?","0.34285714285714286",334
 "text-lines-3.jpeg","C'est un exemple d'un texte en français. Une deuxième ligne de texte. Une troisième ligne de texte.","0.16666666666666666",191
