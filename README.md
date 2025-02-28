@@ -20,9 +20,11 @@ The file will be loaded and the `run` function will be called for each image and
 When the `-a` option is used to append the result to the last created CSV for that model, in that way it is possible to interrupt and continue later. The process will skip the images that are already stored in the CSV.
 
 
-### compare
+### compare \<result_file_path\>
 
-TODO
+> E.g.: `compare /real/path/to/results/minicpm_12313.csv` 
+
+It will create a Markdown table with the filename and the resume of the data that is inside of the result `.csv` file.
 
 ## How to add new model candidate
 
