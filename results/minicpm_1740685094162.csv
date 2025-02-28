@@ -29,3 +29,9 @@ After fine-tuning, Trocr seems to have much better single-line accuracy than Kde
 
 If Kden still has poor performance post-fine-tuning then one option could be to use Kden for sequential and Trocr for text recognition.
 Also - Is Kden's image segmentation good enough?","0.189873417721519",210
+"markdown-2.jpeg","# Groceries list
+- [ ] Milk
+- [X] Bread
+- [ ] Eggs
+- [ ] Flour
+- [ ] Blackberries","0",351
