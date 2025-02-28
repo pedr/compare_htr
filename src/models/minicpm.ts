@@ -29,7 +29,7 @@ export default class MiniCPM {
 
         const instruction = "SYSTEM: you are an agent of a OCR system. Your job is to be concise and correct. You should NEVER deviate from the content of the image. You should NEVER add any context or new information. Your only job should be to transcribe the text presented in the image as text without anything new inforation. Use the first image as an example, the output for it should be: ```This is a page with well-spaced lines of text to be recognized and segmented.```. Your turn:";
 
-        const command = `${pathToLlamaCli} -m ${pathToModel} --mmproj ${pathToModel2} -c 4096 --temp 0.4 --top-p 0.8 --top-k 100 --repeat-penalty 1.05 --image ${pathToExampleImage} --image ${imagePath} -p "${instruction}"`
+        const command = `${pathToLlamaCli} -m ${pathToModel} --mmproj ${pathToModel2} -c 4096 --temp 0.1 --top-p 0.8 --top-k 100 --repeat-penalty 1.05 --image ${pathToExampleImage} --image ${imagePath} -p "${instruction}"`
 
         const result = await exec(command);
         const log = result.stdout.split('<assistant>');
